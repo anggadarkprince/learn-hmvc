@@ -44,6 +44,7 @@ class Author extends MX_Controller
      */
     public function article($username)
     {
+        $this->load->model('Author_model', 'author');
         $this->load->model('article/Article_model', 'article');
         $author = $this->author->getAuthorByUsername($username);
         $articles = $this->article->getArticlesByAuthor($author['id']);
