@@ -46,7 +46,7 @@ class Page extends CI_Controller
      */
     public function contact()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'Article') {
             $this->load->model('ContactModel', 'contact');
             $message = [
                 'name' => $this->input->post('name'),

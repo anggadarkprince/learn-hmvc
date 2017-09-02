@@ -1,6 +1,15 @@
 body {
     padding-top: 5rem;
 }
+
 .starter-template {
     padding: 3rem 1.5rem;
+}
+
+.section-title {
+    margin-bottom: 25px;
+}
+
+.table td, .table th {
+    vertical-align: middle;
 }

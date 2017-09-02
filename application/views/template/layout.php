@@ -26,10 +26,10 @@
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(1) != 'article' ?: 'active' ?>">
                 <a class="nav-link" href="<?= site_url('article') ?>">Articles</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(1) != 'author' ?: 'active' ?>">
                 <a class="nav-link" href="<?= site_url('author') ?>">Authors</a>
             </li>
             <li class="nav-item">
