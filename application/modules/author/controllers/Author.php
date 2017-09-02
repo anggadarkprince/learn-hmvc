@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Author extends MX_Controller
 {
+    /**
+     * Author constructor.
+     */
     public function __construct()
     {
         parent::__construct();

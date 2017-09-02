@@ -21,14 +21,23 @@
         <tr>
             <th><?= $no++ ?></th>
             <td>
-                <a href="<?= site_url('article/' . $article['slug']) ?>">
+                <a href="<?= site_url('article/view/' . $article['slug']) ?>">
                     <?= $article['title'] ?>
                 </a>
             </td>
             <td><?= trim(substr(strip_tags($article['content']), 0, 200)) ?>...</td>
-            <td><?= $article['author_name'] ?></td>
+            <td>
+                <a href="<?= site_url('author/view/' . $article['author_username']) ?>">
+                    <?= $article['author_name'] ?>
+                </a>
+            </td>
             <td><?= (new DateTime($article['created_at']))->format('M d, Y h:i a') ?></td>
         </tr>
     <?php endforeach; ?>
+    <?php if(empty($articles)): ?>
+        <tr class="text-center">
+            <td colspan="4">No article is available</td>
+        </tr>
+    <?php endif; ?>
     </tbody>
 </table>

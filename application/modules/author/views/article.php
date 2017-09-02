@@ -21,7 +21,7 @@
         <tr>
             <th><?= $no++ ?></th>
             <td>
-                <a href="<?= site_url('article/' . $article['slug']) ?>">
+                <a href="<?= site_url('article/view/' . $article['slug']) ?>">
                     <?= $article['title'] ?>
                 </a>
             </td>
@@ -29,5 +29,10 @@
             <td><?= (new DateTime($article['created_at']))->format('M d, Y h:i a') ?></td>
         </tr>
     <?php endforeach; ?>
+    <?php if(empty($articles)): ?>
+        <tr class="text-center">
+            <td colspan="4">No article was created by this user</td>
+        </tr>
+    <?php endif; ?>
     </tbody>
 </table>

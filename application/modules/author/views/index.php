@@ -38,5 +38,10 @@
             <td><?= $author['status'] ?></td>
         </tr>
     <?php endforeach; ?>
+    <?php if(empty($authors)): ?>
+        <tr class="text-center">
+            <td colspan="4">No author is available</td>
+        </tr>
+    <?php endif; ?>
     </tbody>
 </table>

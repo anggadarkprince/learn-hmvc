@@ -39,9 +39,17 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="status" class="col-sm-4 col-form-label">Article</label>
+                <label for="status" class="col-sm-4 col-form-label">Total Article</label>
                 <div class="col-sm-8">
-                    <a href="<?= site_url('author/article/' . $author['username']) ?>" class="btn btn-sm btn-outline-primary">View Articles</a>
+                    <input readonly class="form-control-plaintext" id="status" value="<?= $author['total_article'] ?> articles">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="status" class="col-sm-4 col-form-label">Action</label>
+                <div class="col-sm-8">
+                    <a href="<?= site_url('author/article/' . $author['username']) ?>" class="btn btn-sm btn-outline-primary">
+                        View Articles
+                    </a>
                 </div>
             </div>
         </form>
