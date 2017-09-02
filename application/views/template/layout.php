@@ -32,9 +32,17 @@
             <li class="nav-item <?= $this->uri->segment(1) != 'author' ?: 'active' ?>">
                 <a class="nav-link" href="<?= site_url('author') ?>">Authors</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('statistic') ?>">Statistic Modules</a>
-            </li>
+            <ul class="navbar-nav <?= $this->uri->segment(1) != 'statistic' ?: 'active' ?>">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Statistic</a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="<?= site_url('statistic') ?>">All Report</a>
+                        <a class="dropdown-item" href="<?= site_url('statistic/author') ?>">Author Report</a>
+                        <a class="dropdown-item" href="<?= site_url('statistic/article') ?>">Article Report</a>
+                    </div>
+                </li>
+            </ul>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item dropdown">

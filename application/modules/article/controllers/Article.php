@@ -9,7 +9,6 @@ class Article extends MX_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Article_model', 'article');
     }
 
     /**
@@ -17,6 +16,7 @@ class Article extends MX_Controller
      */
     public function index()
     {
+        $this->load->model('Article_model', 'article');
         $this->load->view('template/layout', [
             'title' => 'Articles',
             'page' => 'index',
@@ -30,6 +30,7 @@ class Article extends MX_Controller
      */
     public function view($slug)
     {
+        $this->load->model('Article_model', 'article');
         $article = $this->article->getArticleBySlug($slug);
         $this->load->view('template/layout', [
             'title' => $article['title'],

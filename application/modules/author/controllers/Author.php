@@ -9,7 +9,6 @@ class Author extends MX_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Author_model', 'author');
     }
 
     /**
@@ -17,6 +16,7 @@ class Author extends MX_Controller
      */
     public function index()
     {
+        $this->load->model('Author_model', 'author');
         $this->load->view('template/layout', [
             'title' => 'Authors',
             'page' => 'index',
@@ -30,6 +30,7 @@ class Author extends MX_Controller
      */
     public function view($username)
     {
+        $this->load->model('Author_model', 'author');
         $this->load->view('template/layout', [
             'title' => 'Detail Author',
             'page' => 'view',
@@ -44,10 +45,8 @@ class Author extends MX_Controller
     public function article($username)
     {
         $this->load->model('article/Article_model', 'article');
-
         $author = $this->author->getAuthorByUsername($username);
         $articles = $this->article->getArticlesByAuthor($author['id']);
-
         $this->load->view('template/layout', [
             'title' => 'Detail Author',
             'page' => 'article',
