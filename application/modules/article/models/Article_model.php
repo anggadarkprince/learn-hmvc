@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ArticleModel extends CI_Model
+class Article_model extends CI_Model
 {
     /**
      * Fetch all articles data.
@@ -18,5 +18,15 @@ class ArticleModel extends CI_Model
             ->join('users', 'articles.author_id = users.id')
             ->get()
             ->result_array();
+    }
+
+    /**
+     * Get article by author id.
+     * @param $authorId
+     * @return mixed
+     */
+    public function getArticlesByAuthor($authorId)
+    {
+        return $this->db->get_where('articles', ['author_id' => $authorId])->result_array();
     }
 }
